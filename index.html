@@ -1,242 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Kushal Das | AI Developer & Researcher</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
-<style>
-    /* === GENERAL === */
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        color: #e9eefb;
-        background: radial-gradient(circle at top left, #091833, #0a0f24);
-        overflow-x: hidden;
-    }
-    a { color: #6ba4ff; text-decoration: none; transition: 0.2s; }
-    a:hover { color: #fff; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kushal Das — AI Developer & Researcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== GLOBAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
 
-    /* === CONTAINER === */
-    .container {
-        width: 90%;
-        max-width: 1100px;
-        margin: 60px auto;
-        background: rgba(18, 30, 58, 0.6);
-        border-radius: 20px;
-        box-shadow: 0 0 30px rgba(0, 115, 255, 0.25);
-        backdrop-filter: blur(12px);
-        padding: 48px 56px;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top left, #090e1f, #030610 90%);
+            color: #dbe3f8;
+            overflow-x: hidden;
+        }
 
-    /* === HEADER === */
-    .header {
-        display: flex;
-        align-items: center;
-        gap: 32px;
-        margin-bottom: 32px;
-    }
-    .photo {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        border: 3px solid #00aaff;
-        box-shadow: 0 0 25px rgba(0,170,255,0.35);
-        object-fit: cover;
-    }
-    .intro {
-        flex: 1;
-    }
-    .intro h1 {
-        font-size: 2.6em;
-        margin: 0;
-        background: linear-gradient(90deg,#00c6ff,#0072ff);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 600;
-    }
-    .intro p {
-        font-size: 1.1em;
-        color: #cfd8e8;
-        margin-top: 10px;
-        line-height: 1.6em;
-    }
+        a {
+            color: #6ba4ff;
+            text-decoration: none;
+            transition: .3s
+        }
 
-    /* === CONTACT === */
-    .contact {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-top: 18px;
-    }
-    .contact-item {
-        background: rgba(0,170,255,0.1);
-        border: 1px solid rgba(0,170,255,0.25);
-        padding: 6px 14px;
-        border-radius: 10px;
-        font-family: 'Fira Code', monospace;
-        color: #6ba4ff;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
+        a:hover {
+            color: #fff
+        }
 
-    /* === SECTION === */
-    section {
-        margin-top: 40px;
-    }
-    .section-title {
-        font-weight: 600;
-        font-size: 1.4em;
-        color: #6ba4ff;
-        margin-bottom: 16px;
-        position: relative;
-    }
-    .section-title::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-        width: 60px;
-        height: 3px;
-        background: linear-gradient(90deg,#00aaff,#0072ff);
-        border-radius: 3px;
-    }
-    ul {
-        list-style: none;
-        padding-left: 0;
-    }
-    li {
-        margin-bottom: 8px;
-        line-height: 1.6em;
-        position: relative;
-        padding-left: 24px;
-    }
-    li::before {
-        content: "▹";
-        position: absolute;
-        left: 0;
-        color: #00aaff;
-    }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 70px auto;
+            background: rgba(15, 22, 46, .55);
+            border-radius: 22px;
+            padding: 55px 60px;
+            box-shadow: 0 0 40px rgba(0, 115, 255, .18);
+            backdrop-filter: blur(12px);
+            animation: fadeIn 1.2s ease forwards;
+        }
 
-    /* === PROJECT CARDS === */
-    .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-        gap: 20px;
-    }
-    .card {
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 14px;
-        padding: 18px 22px;
-        transition: 0.25s;
-    }
-    .card:hover {
-        border-color: #0072ff;
-        transform: translateY(-3px);
-        box-shadow: 0 0 20px rgba(0,115,255,0.2);
-    }
-    .card-title {
-        font-weight: 600;
-        font-size: 1.1em;
-        color: #fff;
-        margin-bottom: 10px;
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px)
+            }
 
-    /* === FOOTER === */
-    footer {
-        text-align: center;
-        margin-top: 60px;
-        color: #6ba4ff;
-        font-size: 0.9em;
-        letter-spacing: 0.5px;
-    }
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
 
-    @media (max-width: 700px) {
-        .container { padding: 28px; }
-        .header { flex-direction: column; text-align: center; }
-        .intro h1 { font-size: 2em; }
-        .projects { grid-template-columns: 1fr; }
-    }
-</style>
+        /* ===== HEADER ===== */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 50px;
+        }
+
+        .photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid #00aaff;
+            box-shadow: 0 0 30px rgba(0, 170, 255, .4);
+            object-fit: cover;
+            animation: float 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0)
+            }
+
+            to {
+                transform: translateY(-8px)
+            }
+        }
+
+        .intro h1 {
+            font-size: 2.6em;
+            font-weight: 600;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro p {
+            margin-top: 8px;
+            font-size: 1.1em;
+            color: #cfd8e8;
+            line-height: 1.7em;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .contact-item {
+            background: rgba(0, 170, 255, .08);
+            border: 1px solid rgba(0, 170, 255, .25);
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-family: 'Fira Code', monospace;
+            color: #6ba4ff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: .25s;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 170, 255, .2);
+            color: #fff
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            margin-top: 60px;
+        }
+
+        .section-title {
+            color: #6ba4ff;
+            font-weight: 600;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, #00aaff, #0072ff);
+            border-radius: 3px;
+        }
+
+        /* ===== HIGHLIGHTS ===== */
+        .highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, #101735, #0b1028);
+            border: 1px solid rgba(255, 255, 255, .05);
+            border-radius: 14px;
+            padding: 22px;
+            transition: .3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            border-color: #58a6ff;
+            box-shadow: 0 0 25px rgba(88, 166, 255, .15);
+        }
+
+        .highlight-card h3 {
+            color: #89c9ff;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .highlight-card p {
+            color: #ccc;
+            line-height: 1.6em
+        }
+
+        /* ===== PROJECTS ===== */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 16px;
+            padding: 22px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            border-color: #0072ff;
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 115, 255, .25);
+        }
+
+        .card-title {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #c9d3ec;
+            line-height: 1.6em;
+        }
+
+        /* ===== EDUCATION ===== */
+        .edu {
+            border-left: 2px solid #0072ff;
+            padding-left: 18px;
+        }
+
+        .edu-item {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        <!-- .edu-item::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #0072ff;
+            border-radius: 50%;
+            position: sticky;
+            left: -6px;
+            top: 7px;
+        } -->
+
+        .edu-item h4 {
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .edu-item span {
+            color: #89c9ff;
+            font-size: .9em;
+        }
+
+        /* ===== SKILLS ===== */
+        ul {
+            list-style: none;
+            padding-left: 0
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 22px;
+            position: relative;
+            line-height: 1.6em
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #00aaff
+        }
+
+        /* ===== EXPERIENCE ===== */
+        .exp {
+            background: rgba(255, 255, 255, .04);
+            border-radius: 14px;
+            padding: 18px 22px;
+            border-left: 3px solid #0072ff;
+        }
+
+        .exp h4 {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .exp span {
+            color: #89c9ff;
+            font-size: .9em;
+        }
+
+        .exp p {
+            color: #ccc;
+            margin-top: 6px;
+            line-height: 1.6em;
+        }
+
+        /* ===== CERTIFICATIONS ===== */
+        .certs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .cert {
+            background: rgba(0, 170, 255, .1);
+            border: 1px solid rgba(0, 170, 255, .25);
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: .95em;
+            color: #bcd4ff;
+            transition: .3s;
+        }
+
+        .cert:hover {
+            background: rgba(0, 170, 255, .25);
+            color: #fff;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            margin-top: 65px;
+            color: #6ba4ff;
+            font-size: .9em;
+            letter-spacing: .5px;
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            padding-top: 25px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:700px) {
+            .container {
+                padding: 28px
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .intro h1 {
+                font-size: 2.2em
+            }
+
+            .projects {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
+
+        <!-- HEADER -->
         <header class="header">
             <img src="profile pic.png" class="photo" alt="Kushal Das">
             <div class="intro">
-                <h1>Kushal Das</h1>
-                <p>AI Developer | Researcher | Architect of “Chetona”<br>
-                Building soulful intelligence through Deep Learning, Graph Neural Networks, and Generative AI.</p>
+                <h1>Hello — I'm Kushal Das</h1>
+                <p>AI/ML Developer | Deep Learning Enthusiast<br>
+                    Building soulful intelligence through Deep Learning, Graph Neural Networks, and Generative AI.</p>
                 <div class="contact">
                     <div class="contact-item">📞 +91-6295639631</div>
                     <div class="contact-item">✉️ kdas76792@gmail.com</div>
                     <div class="contact-item">📍 West Bengal, India</div>
                     <div class="contact-item"><a href="https://github.com/kdas76" target="_blank">GitHub</a></div>
-                    <div class="contact-item"><a href="https://linkedin.com/in/kushal-das01/" target="_blank">LinkedIn</a></div>
+                    <div class="contact-item"><a href="https://linkedin.com/in/kushal-das01/"
+                            target="_blank">LinkedIn</a></div>
                 </div>
             </div>
         </header>
 
+        <!-- HIGHLIGHTS -->
         <section>
             <h2 class="section-title">Highlights</h2>
-            <ul>
-                <li>Architected CNNs, Transformers, GNNs, and generative models across NLP, vision, and molecular data.</li>
-                <li>Built Chetona: a multilingual transformer chatbot with memory and persona control.</li>
-                <li>Research on geometry-aware generative molecular modeling using PyTorch Geometric.</li>
-                <li>Passionate about bridging consciousness and computation in AI systems.</li>
-            </ul>
+            <div class="highlights">
+                <div class="highlight-card">
+                    <h3>Novel Architectures</h3>
+                    <p>Engineered CNNs, Transformers, and GNNs with generative designs across language, vision, and
+                        molecular data — building architectures that learn and evolve with precision.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Vision & Purpose</h3>
+                    <p>Guided by the mission to connect <strong>consciousness and computation</strong>, creating AI that
+                        interprets not just data, but intent, emotion, and meaning.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Researcher</h3>
+                    <p>Authored and co-authored <strong>4 research papers</strong> exploring deep learning, graph-based
+                        molecular generation, and AI cognition — bridging academia with innovation.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Real-World Problem Solver</h3>
+                    <p>Each project — from <strong>Chetona</strong> to <strong>Women Safety AI</strong> — addresses real
+                        human challenges, proving that intelligence must serve purpose before perfection.</p>
+                </div>
+            </div>
         </section>
 
+        <!-- PROJECTS -->
         <section>
             <h2 class="section-title">Projects</h2>
             <div class="projects">
                 <div class="card">
                     <div class="card-title">Chetona – Multilingual Transformer Chatbot</div>
-                    <p>Custom-built GPT-style architecture with dynamic memory, multilingual Bn-Hi-En conversation, and emotional context retention.</p>
+                    <p>Custom GPT-style conversational model with memory, persona control, and multilingual Bn–Hi–En
+                        communication. A soulful chatbot designed to simulate emotional intelligence.</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">DeepAero – Satellite-Based Aerosol Prediction</div>
-                    <p>Modeled UVAI & MODIS data for aerosol pattern forecasting using DNNs; focusing on spatio-temporal modeling over Indian regions.</p>
+                    <div class="card-title">A Unified Framework for Geometry-Enhanced & Drug-Likeness-Constrained
+                        Molecular Graph Generation</div>
+                    <p>Hybrid generative GNN combining geometry, 3-body interactions, and property-guided diffusion to
+                        generate valid, novel, and drug-like molecules efficiently.</p>
                 </div>
+                <!-- <div class="card">
+                    <div class="card-title">DeepAero – Satellite Aerosol Prediction</div>
+                    <p>Spatio-temporal CNN-LSTM system analyzing OMI UVAI & MERRA-2 datasets for accurate aerosol
+                        absorption forecasting across Indian regions (2010–2024).</p>
+                </div> -->
                 <div class="card">
-                    <div class="card-title">HMG++ – Generative Molecular Graph Model</div>
-                    <p>Hybrid geometry-enhanced GNN integrating 3-body interactions, diffusion decoding, and property-guided molecule generation.</p>
+                    <div class="card-title">Smartwatch-Based Women Safety System</div>
+                    <p>Gesture-triggered and voice-activated emergency system integrating AI-based distress detection,
+                        GPS alerts, and real-time data streaming for safety intervention.</p>
                 </div>
             </div>
         </section>
 
+        <!-- EDUCATION -->
         <section>
             <h2 class="section-title">Education</h2>
-            <p><strong>University of Engineering & Management</strong><br>
-            B.Tech in Computer Science & Engineering (AIML), 2022–2026<br>
-            CGPA: 7.5/10<br><br>
-            <strong>Khatra High School</strong> – WBCHSE (93%)</p>
+            <div class="edu">
+                <div class="edu-item">
+                    <h4>University of Engineering & Management, Kolkata</h4>
+                    <span>B.Tech in Computer Science & Engineering (AIML) · 2022–2026</span>
+                    <p>Focused on Artificial Intelligence, Machine Learning, and Generative Architectures. CGPA: 7.5/10
+                    </p>
+                </div>
+                <div class="edu-item">
+                    <h4>Khatra High School</h4>
+                    <span>WBCHSE · 93%</span>
+                    <p>Science stream with early research interest in mathematics.</p>
+                </div>
+            </div>
         </section>
 
+        <!-- SKILLS -->
         <section>
             <h2 class="section-title">Skills</h2>
             <ul>
                 <li><strong>Languages:</strong> Python, Java, SQL</li>
-                <li><strong>ML/DL:</strong> PyTorch, TensorFlow, Scikit-learn, Keras</li>
-                <li><strong>Frameworks:</strong> Flask, Streamlit, REST APIs, Firebase</li>
+                <li><strong>ML/DL & Research:</strong> Transformers, GNNs, Diffusion Models, Representation Learning,
+                    Generative Modeling</li>
+                <li><strong>Frameworks:</strong> PyTorch, TensorFlow, Scikit-learn, Keras, Flask, Streamlit</li>
                 <li><strong>Tools:</strong> Git, Colab, Kaggle, Linux, VS Code</li>
             </ul>
         </section>
 
+        <!-- EXPERIENCE -->
         <section>
             <h2 class="section-title">Experience</h2>
-            <p><strong>NIT Durgapur – Research Intern (May–Jul 2025)</strong><br>
-            Developed generative GNN for molecular graphs; achieved state-of-the-art Validity, Uniqueness & Novelty metrics.</p>
+            <div class="exp">
+                <h4>NIT Durgapur — Research Intern</h4>
+                <span>May – Jul 2025</span>
+                <p>Worked on generative molecular graph modeling using geometry-aware GNNs. Achieved leading
+                    Validity–Uniqueness–Novelty metrics, contributing to ongoing publication work.</p>
+            </div>
         </section>
 
+        <!-- CERTIFICATIONS -->
+        <section>
+            <h2 class="section-title">Certifications</h2>
+            <div class="certs">
+                <div class="cert">NPTEL – Machine Learning by IIT Madras</div>
+                <div class="cert">NPTEL – Deep Learning by IIT Kharagpur</div>
+                <div class="cert">Coursera – Deep Learning Specialization (Andrew Ng)</div>
+                <div class="cert">Google – Machine Learning Crash Course</div>
+                <div class="cert">IBM – Python for Data Science</div>
+            </div>
+        </section>
+
+        <!-- SOFT SKILLS -->
         <section>
             <h2 class="section-title">Soft Skills</h2>
-            <p>Analytical · Research-oriented · Adaptive · Conceptual innovator bridging logic with creativity.</p>
+            <p>Analytical · Research-driven · Adaptive · Conceptual Innovator · Blending logic with creativity and
+                empathy.</p>
         </section>
 
-        <footer>© 2025 Kushal Das — "Turning Thought into Intelligence"</footer>
+        <footer>© 2025 Kushal Das — “Turning Thought into Intelligence”</footer>
     </div>
 </body>
+
 </html>
