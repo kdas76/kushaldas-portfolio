@@ -1,175 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Kushal Das - Biodata</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 700px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 32px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 16px;
-        }
-        .photo {
-            display: block;
-            margin: 0 auto 24px auto;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #eee;
-        }
-        .section-title {
-            font-size: 1.1em;
-            color: #34495e;
-            margin-top: 24px;
-            margin-bottom: 8px;
-            font-weight: bold;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 4px;
-        }
-        .info, .section {
-            margin-bottom: 14px;
-        }
-        .label {
-            font-weight: bold;
-            color: #34495e;
-            width: 120px;
-            display: inline-block;
-        }
-        .value {
-            color: #555;
-        }
-        ul {
-            margin: 6px 0 0 0;
-            padding-left: 20px;
-        }
-        .links a {
-            margin-right: 12px;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Kushal Das | AI Developer & Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+<style>
+    /* === GENERAL === */
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        color: #e9eefb;
+        background: radial-gradient(circle at top left, #091833, #0a0f24);
+        overflow-x: hidden;
+    }
+    a { color: #6ba4ff; text-decoration: none; transition: 0.2s; }
+    a:hover { color: #fff; }
+
+    /* === CONTAINER === */
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 60px auto;
+        background: rgba(18, 30, 58, 0.6);
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 115, 255, 0.25);
+        backdrop-filter: blur(12px);
+        padding: 48px 56px;
+    }
+
+    /* === HEADER === */
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        margin-bottom: 32px;
+    }
+    .photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #00aaff;
+        box-shadow: 0 0 25px rgba(0,170,255,0.35);
+        object-fit: cover;
+    }
+    .intro {
+        flex: 1;
+    }
+    .intro h1 {
+        font-size: 2.6em;
+        margin: 0;
+        background: linear-gradient(90deg,#00c6ff,#0072ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+    }
+    .intro p {
+        font-size: 1.1em;
+        color: #cfd8e8;
+        margin-top: 10px;
+        line-height: 1.6em;
+    }
+
+    /* === CONTACT === */
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 18px;
+    }
+    .contact-item {
+        background: rgba(0,170,255,0.1);
+        border: 1px solid rgba(0,170,255,0.25);
+        padding: 6px 14px;
+        border-radius: 10px;
+        font-family: 'Fira Code', monospace;
+        color: #6ba4ff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* === SECTION === */
+    section {
+        margin-top: 40px;
+    }
+    .section-title {
+        font-weight: 600;
+        font-size: 1.4em;
+        color: #6ba4ff;
+        margin-bottom: 16px;
+        position: relative;
+    }
+    .section-title::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg,#00aaff,#0072ff);
+        border-radius: 3px;
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    li {
+        margin-bottom: 8px;
+        line-height: 1.6em;
+        position: relative;
+        padding-left: 24px;
+    }
+    li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: #00aaff;
+    }
+
+    /* === PROJECT CARDS === */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 14px;
+        padding: 18px 22px;
+        transition: 0.25s;
+    }
+    .card:hover {
+        border-color: #0072ff;
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px rgba(0,115,255,0.2);
+    }
+    .card-title {
+        font-weight: 600;
+        font-size: 1.1em;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    /* === FOOTER === */
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        color: #6ba4ff;
+        font-size: 0.9em;
+        letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 700px) {
+        .container { padding: 28px; }
+        .header { flex-direction: column; text-align: center; }
+        .intro h1 { font-size: 2em; }
+        .projects { grid-template-columns: 1fr; }
+    }
+</style>
 </head>
 <body>
     <div class="container">
-        <img src="https://via.placeholder.com/120" alt="Profile Photo" class="photo">
-        <h1>Kushal Das</h1>
-        <div class="info">
-            <span class="label">Phone:</span> <span class="value">+91-6295639631</span><br>
-            <span class="label">Email:</span> <span class="value">kdas76792@gmail.com</span><br>
-            <span class="label">Location:</span> <span class="value">West Bengal, India</span><br>
-            <span class="label">Links:</span>
-            <span class="links">
-                <a href="https://github.com/kdas76" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/kushal-das01/" target="_blank">LinkedIn</a>
-            </span>
-        </div>
-        <div class="section-title">Profile</div>
-        <div class="section">
-            Motivated CS undergrad with a passion for AI, ML, Deep Learning, aiming to solve real-world problems through intelligent, scalable tech. Eager to apply and grow my skills by building impactful systems that improve lives.
-        </div>
-        <div class="section-title">Education</div>
-        <div class="section">
-            <strong>University of Engineering & Management</strong><br>
-            B.Tech in Computer Science and Engineering (AIML), 2022–2026<br>
-            CGPA: 7.5 / 10 (Till 6th semester)<br>
-            Relevant Courses: Machine Learning, Deep Learning, Data Structures, Algorithms, CV, NLP, Data Science.<br><br>
-            <strong>Khatra High School (H.S) WBCHSE</strong><br>
-            Higher Secondary (XII), 2020–2022<br>
-            Percentage: 93%
-        </div>
-        <div class="section-title">Technical Skills</div>
-        <div class="section">
-            <strong>Languages:</strong> Python, Java, SQL<br>
-            <strong>ML/DL Libraries:</strong> Scikit-learn, TensorFlow, Keras, PyTorch<br>
-            <strong>Data Handling & Analysis:</strong> Pandas, NumPy, Matplotlib, Seaborn<br>
-            <strong>Frameworks:</strong> Flask, Streamlit, MySQL, REST APIs, Firebase, Bert<br>
-            <strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Jupyter Notebook, Google Colab, Kaggle, Linux
-        </div>
-        <div class="section-title">Certifications</div>
-        <div class="section">
+        <header class="header">
+            <img src="https://via.placeholder.com/120x120.png?text=KD" class="photo" alt="Kushal Das">
+            <div class="intro">
+                <h1>Kushal Das</h1>
+                <p>AI Developer | Researcher | Architect of “Chetona”<br>
+                Building soulful intelligence through Deep Learning, Graph Neural Networks, and Generative AI.</p>
+                <div class="contact">
+                    <div class="contact-item">📞 +91-6295639631</div>
+                    <div class="contact-item">✉️ kdas76792@gmail.com</div>
+                    <div class="contact-item">📍 West Bengal, India</div>
+                    <div class="contact-item"><a href="https://github.com/kdas76" target="_blank">GitHub</a></div>
+                    <div class="contact-item"><a href="https://linkedin.com/in/kushal-das01/" target="_blank">LinkedIn</a></div>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2 class="section-title">Highlights</h2>
             <ul>
-                <li>Deep Learning Specialization – DeepLearning.AI (Coursera)</li>
-                <li>Generative AI Fundamentals – IBM (Coursera)</li>
-                <li>Applied Machine Learning – Johns Hopkins University (Coursera)</li>
-                <li>Deep Learning with PyTorch, TensorFlow, Keras – IBM (Coursera)</li>
+                <li>Architected CNNs, Transformers, GNNs, and generative models across NLP, vision, and molecular data.</li>
+                <li>Built Chetona: a multilingual transformer chatbot with memory and persona control.</li>
+                <li>Research on geometry-aware generative molecular modeling using PyTorch Geometric.</li>
+                <li>Passionate about bridging consciousness and computation in AI systems.</li>
             </ul>
-        </div>
-        <div class="section-title">Experience</div>
-        <div class="section">
-            <strong>NIT Durgapur – Research Intern</strong> (May 2025 – July 2025)<br>
+        </section>
+
+        <section>
+            <h2 class="section-title">Projects</h2>
+            <div class="projects">
+                <div class="card">
+                    <div class="card-title">Chetona – Multilingual Transformer Chatbot</div>
+                    <p>Custom-built GPT-style architecture with dynamic memory, multilingual Bn-Hi-En conversation, and emotional context retention.</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">DeepAero – Satellite-Based Aerosol Prediction</div>
+                    <p>Modeled UVAI & MODIS data for aerosol pattern forecasting using DNNs; focusing on spatio-temporal modeling over Indian regions.</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">HMG++ – Generative Molecular Graph Model</div>
+                    <p>Hybrid geometry-enhanced GNN integrating 3-body interactions, diffusion decoding, and property-guided molecule generation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Education</h2>
+            <p><strong>University of Engineering & Management</strong><br>
+            B.Tech in Computer Science & Engineering (AIML), 2022–2026<br>
+            CGPA: 7.5/10<br><br>
+            <strong>Khatra High School</strong> – WBCHSE (93%)</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Skills</h2>
             <ul>
-                <li>Built a generative GNN using heterogeneous molecular graphs and 3-body interactions.</li>
-                <li>Trained model on QM9 dataset using PyTorch Geometric, achieving high diversity scores.</li>
-                <li>Outperformed GraphAF and DGMG on Validity, Uniqueness, and Novelty metrics.</li>
+                <li><strong>Languages:</strong> Python, Java, SQL</li>
+                <li><strong>ML/DL:</strong> PyTorch, TensorFlow, Scikit-learn, Keras</li>
+                <li><strong>Frameworks:</strong> Flask, Streamlit, REST APIs, Firebase</li>
+                <li><strong>Tools:</strong> Git, Colab, Kaggle, Linux, VS Code</li>
             </ul>
-        </div>
-        <div class="section-title">Projects</div>
-        <div class="section">
-            <strong>Smartwatch-Based AI-Powered Women Safety System</strong> (Jul 2024 – Nov 2024)<br>
-            <ul>
-                <li>Gesture-activated ML model for real-time audio-based distress detection on smartwatch.</li>
-                <li>GPS-triggered SOS alerts via voice/emotion cues, sending location to contacts/authorities.</li>
-                <li>Enhancing with NLP and geo-alert zones to proactively warn users near high-risk areas.</li>
-            </ul>
-            <strong>Chetona: Transformer-based Multilingual AI Chatbot</strong> (Jan 2024 - Jun 2024)<br>
-            <ul>
-                <li>Developed transformer chatbot with memory, Bn-Hi-En multilingual support, and dynamic persona control.</li>
-                <li>Built custom tokenizer, GPT-style architecture, and memory-aware generation from scratch.</li>
-                <li>Deployed real-time interface with persistent chat logs and context-based smart replies.</li>
-            </ul>
-            <strong>DeepAero: Satellite-Based Aerosol Prediction using UVAI Through Deep Learning</strong> (Jan 2025 - Jun 2025)<br>
-            <ul>
-                <li>Built end-to-end pipeline to predict AAOD using OMI UVAI and MODIS/MERRA-2 satellite features.</li>
-                <li>Modeled spatio-temporal aerosol patterns over India (2010–2024) using deep neural networks.</li>
-                <li>Currently optimizing with angular radiative inputs and AERONET ground validation.</li>
-            </ul>
-        </div>
-        <div class="section-title">Achievements & Hackathons</div>
-        <div class="section">
-            <ul>
-                <li>Hackathon Participation: HackUEM, AceHack, SIH Internal Round</li>
-                <li>Campus Winner: AceHack4.0</li>
-            </ul>
-        </div>
-        <div class="section-title">Extracurricular & Leadership</div>
-        <div class="section">
-            <ul>
-                <li>Tech Club Member: Core member of ML & AI Society– organized hands-on sessions and mentorship hours.</li>
-                <li>Mentor: Conducted workshops on “Intro to Machine Learning with Python” for 1st year students.</li>
-                <li>Event Organizer: Led execution for “AI Day @UEM” with 100+ student participation, live demos & speaker sessions.</li>
-            </ul>
-        </div>
-        <div class="section-title">Soft Skills</div>
-        <div class="section">
-            Analytical thinker with a data-driven mindset and adaptive problem-solving across domains.<br>
-            Cross-domain adaptability across NLP, CV, Web, and Molecular domains.<br>
-            Team player with experience in collaborative projects and hackathons.<br>
-            Known for proposing novel architectures and research-driven ideas.
-        </div>
-        <div class="section-title">Languages</div>
-        <div class="section">
-            English: Fluent<br>
-            Hindi: Fluent<br>
-            Bengali: Native Speaker
-        </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Experience</h2>
+            <p><strong>NIT Durgapur – Research Intern (May–Jul 2025)</strong><br>
+            Developed generative GNN for molecular graphs; achieved state-of-the-art Validity, Uniqueness & Novelty metrics.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Soft Skills</h2>
+            <p>Analytical · Research-oriented · Adaptive · Conceptual innovator bridging logic with creativity.</p>
+        </section>
+
+        <footer>© 2025 Kushal Das — "Turning Thought into Intelligence"</footer>
     </div>
 </body>
 </html>
